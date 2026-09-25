@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professionelle Nachhilfe in Mathematik, Naturwissenschaften, Physik, Chemie, Mechanik und Rechnungswesen mit Thomas Petz.">
+  <title>Petz Nachhilfe | Mathematik & Naturwissenschaft</title>
+  <style>
+    :root{
+      --ink:#10243a;
+      --muted:#607084;
+      --accent:#f4b400;
+      --accent-dark:#d89b00;
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --line:#e5eaf0;
+      --max:1120px;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:1.15rem;font-weight:800;letter-spacing:.04em}
+    .logo span{color:var(--accent-dark)}
+    .navlinks{display:flex;gap:24px;align-items:center}
+    .navlinks a{text-decoration:none;font-weight:650;font-size:.95rem}
+    .navlinks a:hover{color:var(--accent-dark)}
+    .menu{display:none;background:none;border:0;font-size:1.5rem}
+    .hero{
+      min-height:680px;
+      display:grid;place-items:center;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(244,180,0,.20), transparent 28%),
+        linear-gradient(135deg,#fff 0%,#f2f6fa 100%);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center;padding:90px 0}
+    .eyebrow{font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark)}
+    h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.02;margin:16px 0 24px;letter-spacing:-.045em}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:650px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-block;padding:13px 20px;border-radius:999px;
+      text-decoration:none;font-weight:800;border:2px solid var(--ink)
+    }
+    .btn.primary{background:var(--ink);color:#fff}
+    .btn.secondary{background:#fff}
+    .hero-card{
+      background:var(--ink);color:#fff;border-radius:28px;padding:34px;
+      box-shadow:0 25px 70px rgba(16,36,58,.18)
+    }
+    .hero-card .big{font-size:4rem;font-weight:900;line-height:1}
+    .hero-card p{color:#dbe4ed}
+    section{padding:95px 0}
+    .section-head{max-width:700px;margin-bottom:45px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:8px 0 14px}
+    .section-head p{color:var(--muted);font-size:1.05rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;box-shadow:0 8px 30px rgba(16,36,58,.05)
+    }
+    .icon{
+      width:48px;height:48px;border-radius:14px;background:#fff4cc;
+      display:grid;place-items:center;font-weight:900;color:var(--accent-dark);margin-bottom:18px
+    }
+    .card h3{margin:0 0 8px;font-size:1.25rem}
+    .card p{margin:0;color:var(--muted)}
+    .about{background:#fff}
+    .about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:center}
+    .portrait{
+      min-height:430px;border-radius:28px;
+      background:linear-gradient(145deg,#dfe8f0,#fff);
+      display:grid;place-items:center;text-align:center;color:var(--muted);padding:30px
+    }
+    .portrait strong{display:block;color:var(--ink);font-size:1.3rem}
+    .steps{display:grid;gap:16px}
+    .step{display:grid;grid-template-columns:75px 1fr;gap:20px;padding:25px;background:#fff;border:1px solid var(--line);border-radius:18px}
+    .num{font-size:1.4rem;font-weight:900;color:var(--accent-dark)}
+    .step h3{margin:0 0 4px}.step p{margin:0;color:var(--muted)}
+    .faq{display:grid;gap:12px;max-width:850px}
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+    summary{cursor:pointer;font-weight:800}
+    details p{color:var(--muted);margin-bottom:0}
+    .contact{background:var(--ink);color:#fff}
+    .contact .section-head p{color:#cbd7e2}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact-box{padding:28px;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(255,255,255,.05)}
+    .contact-box a{font-size:1.1rem;font-weight:750;text-decoration:none}
+    footer{padding:30px 0;background:#0b1928;color:#9fb0c0;font-size:.9rem}
+    @media(max-width:850px){
+      .navlinks{display:none}.menu{display:block}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{min-height:auto}.hero-grid{padding:70px 0;gap:35px}
+      .cards{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .container{width:min(calc(100% - 28px),var(--max))}
+      section{padding:70px 0}
+      .cards{grid-template-columns:1fr}
+      h1{font-size:2.7rem}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#top" style="text-decoration:none">PETZ <span>NACHHILFE</span></a>
+      <div class="navlinks">
+        <a href="#faecher">Fächer</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <button class="menu" aria-label="Menü">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Petz Nachhilfe</div>
+        <h1>Professionelle<br>Nachhilfe.</h1>
+        <p>
+          Erhöhe deine Leistungen in Mathematik, Naturwissenschaften, Physik,
+          Chemie, Mechanik und Rechnungswesen – mit individueller Methodik
+          und persönlicher Betreuung.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#kontakt">Kontakt aufnehmen</a>
+          <a class="btn secondary" href="#faecher">Mehr erfahren</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="big">01</div>
+        <h2>Verstehen statt auswendig lernen.</h2>
+        <p>
+          Gemeinsam zerlegen wir komplexe Themen in verständliche Schritte,
+          üben sie und wenden das Gelernte praktisch an.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faecher">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Das Angebot</div>
+        <h2>Die angebotenen Fächer</h2>
+        <p>Professionelle Nachhilfe für wichtige MINT-Fächer und Rechnungswesen.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card"><div class="icon">M</div><h3>Mathematik</h3><p>Komplexe Konzepte verstehen, üben und anwenden – von der Mittelschule bis zur Universität.</p></article>
+        <article class="card"><div class="icon">R</div><h3>Rechnungswesen</h3><p>Buchhaltung, Finanzmanagement, doppelte Buchhaltung und Kostenrechnung verständlich erklärt.</p></article>
+        <article class="card"><div class="icon">P</div><h3>Physik</h3><p>Optik, Elektrizität, Naturgesetze sowie theoretische und praktische Aufgaben.</p></article>
+        <article class="card"><div class="icon">M</div><h3>Mechanik</h3><p>Kräfte, Bewegungen, Statik und Dynamik auf verständliche Grundregeln herunterbrechen.</p></article>
+        <article class="card"><div class="icon">C</div><h3>Chemie</h3><p>Chemische Reaktionen verstehen und Wissen strukturiert für Prüfungen aufbauen.</p></article>
+        <article class="card"><div class="icon">+</div><h3>Weitere Themen</h3><p>Du bist dir nicht sicher, ob dein Thema dabei ist? Schreib mir einfach und wir klären es gemeinsam.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="ueber-mich">
+    <div class="container about-grid">
+      <div class="portrait">
+        <div>
+          <strong>Thomas Petz</strong>
+          <span>Persönliche Betreuung & verständliche Erklärungen</span>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Zu mir</div>
+        <h2>Wissen verständlich machen.</h2>
+        <p>
+          Als Physikstudent habe ich Einblicke in grundlegende Naturgesetze
+          und komplexe Konzepte der Mathematik erhalten. Dadurch weiß ich,
+          wie man schwierige Inhalte verständlich aufbereitet.
+        </p>
+        <p>
+          Durch meine Matura in Wirtschaft und Rechnungswesen kann ich auch
+          bei Kontenplan und Kostenrechnung unterstützen. Mein pädagogischer
+          Ansatz verbindet methodisches und analytisches Denken mit persönlicher Betreuung.
+        </p>
+        <p>
+          Auch an der Universität durfte ich Studierende bei Labornachmittagen
+          und anderen Kursen betreuen. Ziel ist nicht nur, Lösungen zu zeigen,
+          sondern die Fähigkeit zu vermitteln, Aufgaben selbst zu lösen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Die Nachhilfe</div>
+        <h2>So arbeiten wir zusammen.</h2>
+        <p>Ein klarer Ablauf – individuell angepasst an Lernstand, Ziel und Lernunterlagen.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step"><div class="num">01</div><div><h3>Erstgespräch – Diagnose & Analyse</h3><p>Wir besprechen Stärken, Schwierigkeiten und Ziele und erstellen daraus einen individuellen Lernplan.</p></div></article>
+        <article class="step"><div class="num">02</div><div><h3>Nachhilfe – Individuelle Lernphasen</h3><p>Komplexe Konzepte werden Schritt für Schritt zerlegt, erklärt und mit passenden Übungen gefestigt.</p></div></article>
+        <article class="step"><div class="num">02-A</div><div><h3>Präsenz – Hausbesuch</h3><p>Die Nachhilfe findet direkt bei dir zu Hause statt – besonders praktisch für nahegelegene und jüngere Lernende.</p></div></article>
+        <article class="step"><div class="num">02-B</div><div><h3>Online – jederzeit und überall</h3><p>Mit digitalem Whiteboard können wir auch online gemeinsam Aufgaben und Inhalte erarbeiten.</p></div></article>
+        <article class="step"><div class="num">03</div><div><h3>Erfolg – Praxis & Anwendung</h3><p>Theorie wird durch Übungen und praktische Anwendungen gefestigt, damit du das Wissen auch in Prüfungen einsetzen kannst.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Wie oft findet die Nachhilfe statt?</summary><p>Die Häufigkeit hängt vom individuellen Bedarf ab. In der Regel sind 1–2 Termine pro Woche sinnvoll. Für Prüfungen kann auch ein Intensivkurs sinnvoll sein.</p></details>
+        <details><summary>Was ist der Unterschied zu regulären Kursen?</summary><p>Die Betreuung findet individuell statt. Der Lernstoff wird an den jeweiligen Lernstand und die Lernunterlagen angepasst und gemeinsam praktisch angewendet.</p></details>
+        <details><summary>Was kostet die Nachhilfe?</summary><p>Die Kosten hängen vom Bildungsniveau, der Anreisedistanz und der Anzahl der gebuchten Stunden ab. Für ein konkretes Angebot kannst du direkt Kontakt aufnehmen.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Kontakt</div>
+        <h2>Bereit loszulegen?</h2>
+        <p>Ob Mathematik, Naturwissenschaften, Mechanik oder Rechnungswesen – schreib mir für ein individuelles Angebot.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-box"><small>E-Mail</small><br><a href="mailto:petzthomas4@gmail.com">petzthomas4@gmail.com</a></div>
+        <div class="contact-box"><small>Telefon</small><br><a href="tel:+436609272902">+43 660 9272902</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    PETZ NACHHILFE • MATHEMATIK • NATURWISSENSCHAFT • RECHNUNGSWESEN • MECHANIK
+    <br>© 2026 Petz Nachhilfe
+  </div>
+</footer>
+
+</body>
+</html>
