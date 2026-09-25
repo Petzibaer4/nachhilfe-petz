@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Petz Nachhilfe – Professionelle Nachhilfe</title>
+
+  <meta
+    name="description"
+    content="Professionelle Nachhilfe in Mathematik, Physik, Chemie, Mechanik und Rechnungswesen."
+  >
+
+  <style>
+    /* =========================================================
+       GRUNDLAGEN
+    ========================================================= */
+
+    :root {
+      --background: #f6f4ef;
+      --white: #ffffff;
+      --black: #171717;
+      --gray: #68645e;
+      --light-gray: #dedbd4;
+      --gold: #c79c51;
+      --dark-gold: #9a722e;
+
+      --max-width: 1180px;
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      background: var(--background);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--max-width)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 1000;
+
+      background: rgba(246, 244, 239, 0.94);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    nav {
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--dark-gold);
+    }
+
+    .nav-contact {
+      border: 1px solid var(--black);
+      border-radius: 100px;
+      padding: 10px 20px;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav-contact:hover {
+      background: var(--black);
+      color: white;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      border: 0;
+      background: transparent;
+
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 94vh;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        140px
+        0
+        90px;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(199, 156, 81, 0.28),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 10% 85%,
+          rgba(199, 156, 81, 0.14),
+          transparent 30%
+        );
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.15fr
+        0.85fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+
+      color: var(--dark-gold);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin-bottom: 28px;
+
+      font-size:
+        clamp(
+          48px,
+          7vw,
+          88px
+        );
+
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      margin-bottom: 34px;
+
+      color: var(--gray);
+
+      font-size: 19px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 24px;
+
+      border:
+        1px solid
+        var(--black);
+
+      border-radius: 100px;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--black);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #333;
+    }
+
+    .button-secondary:hover {
+      background: white;
+    }
+
+
+    /* HERO CARD */
+
+    .hero-card {
+      min-height: 440px;
+
+      padding: 38px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      position: relative;
+      overflow: hidden;
+
+      color: white;
+      background: var(--black);
+
+      border-radius: 34px;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.16);
+    }
+
+    .hero-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 310px;
+      height: 310px;
+
+      right: -100px;
+      top: -100px;
+
+      border-radius: 50%;
+
+      background: var(--gold);
+    }
+
+    .formula {
+      position: relative;
+      z-index: 1;
+
+      font-size: 65px;
+      font-weight: 800;
+
+      letter-spacing: -0.06em;
+    }
+
+    .hero-card-text {
+      position: relative;
+      z-index: 1;
+
+      max-width: 320px;
+
+      color: #d5d5d5;
+    }
+
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 16px;
+
+      font-size:
+        clamp(
+          36px,
+          5vw,
+          60px
+        );
+
+      line-height: 1.05;
+
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+
+    /* =========================================================
+       FÄCHER
+    ========================================================= */
+
+    .subjects {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .subject {
+      min-height: 250px;
+
+      padding: 30px;
+
+      background: var(--white);
+
+      border:
+        1px solid
+        var(--light-gray);
+
+      border-radius: var(--radius);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .subject:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.07);
+    }
+
+    .subject-number {
+      color: var(--dark-gold);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+    }
+
+    .subject h3 {
+      margin:
+        50px
+        0
+        12px;
+
+      font-size: 25px;
+    }
+
+    .subject p {
+      color: var(--gray);
+    }
+
+
+    /* =========================================================
+       ÜBER MICH
+    ========================================================= */
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.8fr
+        1.2fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .portrait {
+      min-height: 520px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      overflow: hidden;
+
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #252525,
+          #918575
+        );
+    }
+
+    /*
+      Platzhalter für das Foto.
+      Hier kann später das Originalfoto eingesetzt werden.
+    */
+
+    .portrait-person {
+      width: 64%;
+      height: 74%;
+
+      background: #dedede;
+
+      border-radius:
+        48%
+        48%
+        0
+        0;
+
+      opacity: 0.9;
+    }
+
+    .about-content h2 {
+      margin-bottom: 25px;
+
+      font-size:
+        clamp(
+          40px,
+          5vw,
+          63px
+        );
+
+      line-height: 1;
+    }
+
+    .about-content p {
+      margin-bottom: 17px;
+
+      color: var(--gray);
+
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       ABLAUF
+    ========================================================= */
+
+    .steps {
+      display: grid;
+
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+
+      grid-template-columns:
+        100px
+        1fr;
+
+      gap: 30px;
+
+      padding: 30px 0;
+
+      border-top:
+        1px solid
+        var(--light-gray);
+    }
+
+    .step:last-child {
+      border-bottom:
+        1px solid
+        var(--light-gray);
+    }
+
+    .step-number {
+      color: var(--dark-gold);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+    }
+
+    .step h3 {
+      margin-bottom: 3px;
+
+      font-size: 25px;
+    }
+
+    .step-label {
+      margin-bottom: 10px;
+
+      color: var(--gray);
+
+      font-size: 14px;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .step p {
+      max-width: 850px;
+
+      color: var(--gray);
+    }
+
+
+    /* =========================================================
+       PRÄSENZ / ONLINE
+    ========================================================= */
+
+    .learning-modes {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 18px;
+
+      margin-top: 25px;
+    }
+
+    .mode {
+      padding: 30px;
+
+      background: white;
+
+      border:
+        1px solid
+        var(--light-gray);
+
+      border-radius: 22px;
+    }
+
+    .mode-number {
+      color: var(--dark-gold);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: 0.08em;
+    }
+
+    .mode h3 {
+      margin:
+        14px
+        0
+        8px;
+
+      font-size: 24px;
+    }
+
+    .mode p {
+      color: var(--gray);
+    }
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .faq {
+      background: var(--white);
+    }
+
+    .faq-list {
+      max-width: 900px;
+    }
+
+    details {
+      padding: 22px 0;
+
+      border-top:
+        1px solid
+        var(--light-gray);
+    }
+
+    details:last-child {
+      border-bottom:
+        1px solid
+        var(--light-gray);
+    }
+
+    summary {
+      position: relative;
+
+      padding-right: 40px;
+
+      cursor: pointer;
+
+      list-style: none;
+
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+
+      position: absolute;
+
+      right: 0;
+      top: -5px;
+
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      max-width: 800px;
+
+      padding-top: 15px;
+
+      color: var(--gray);
+    }
+
+
+    /* =========================================================
+       KONTAKT
+    ========================================================= */
+
+    .contact-box {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 50px;
+
+      padding: 70px;
+
+      color: white;
+
+      background: var(--black);
+
+      border-radius: 34px;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 20px;
+
+      font-size:
+        clamp(
+          42px,
+          5vw,
+          66px
+        );
+
+      line-height: 1;
+    }
+
+    .contact-box p {
+      max-width: 550px;
+
+      color: #c9c9c9;
+    }
+
+    .contact-details {
+      display: flex;
+
+      flex-direction: column;
+      justify-content: center;
+
+      gap: 18px;
+    }
+
+    .contact-link {
+      padding-bottom: 12px;
+
+      border-bottom:
+        1px solid
+        #555;
+
+      font-size: 20px;
+      font-weight: 700;
+
+      transition: color 0.2s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--gold);
+    }
+
+    .contact-button {
+      width: max-content;
+
+      color: white;
+      border-color: #777;
+    }
+
+    .contact-button:hover {
+      background: white;
+      color: black;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 35px 0;
+
+      color: var(--gray);
+
+      font-size: 13px;
+    }
+
+    footer .container {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 850px) {
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+        right: 0;
+
+        padding: 20px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        background: var(--background);
+
+        border-bottom:
+          1px solid
+          var(--light-gray);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 320px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .subjects {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 560px) {
+
+      .container {
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max-width)
+          );
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .subjects {
+        grid-template-columns: 1fr;
+      }
+
+      .learning-modes {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+      }
+
+      .portrait {
+        min-height: 400px;
+      }
+
+      .contact-box {
+        padding: 35px 28px;
+
+        border-radius: 25px;
+      }
+
+      .contact-link {
+        font-size: 17px;
+      }
+
+      footer .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          href="#start"
+          class="logo"
+        >
+          PETZ NACHHILFE
+        </a>
+
+        <button
+          class="mobile-menu"
+          id="mobileMenu"
+          aria-label="Menü öffnen"
+        >
+          ☰
+        </button>
+
+        <div
+          class="nav-links"
+          id="navLinks"
+        >
+
+          <a href="#faecher">
+            Fächer
+          </a>
+
+          <a href="#ueber-mich">
+            Über mich
+          </a>
+
+          <a href="#nachhilfe">
+            Nachhilfe
+          </a>
+
+          <a href="#faq">
+            FAQ
+          </a>
+
+          <a
+            href="#kontakt"
+            class="nav-contact"
+          >
+            Kontakt
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       HAUPTINHALT
+  ======================================================== -->
+
+  <main id="start">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div>
+
+            <div class="eyebrow">
+              Petz Nachhilfe
+            </div>
+
+            <h1>
+              Professionelle<br>
+              Nachhilfe.
+            </h1>
+
+            <p class="hero-description">
+              Erhöhe deine Leistungen in Mathematik,
+              Naturwissenschaften, Physik, Chemie und
+              Rechnungswesen mit Thomas Petz.
+              Individuelle Betreuung und verständliche
+              Erklärungen für deinen persönlichen Lernerfolg.
+            </p>
+
+            <div class="buttons">
+
+              <a
+                href="#kontakt"
+                class="button button-primary"
+              >
+                Kontakt aufnehmen
+              </a>
+
+              <a
+                href="#faecher"
+                class="button button-secondary"
+              >
+                Mehr erfahren
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero-card">
+
+            <div class="formula">
+              x² + y² = z²
+            </div>
+
+            <div class="hero-card-text">
+              Verstehen statt nur auswendig lernen.
+              Gemeinsam schaffen wir die Verbindung
+              zwischen Theorie, Übung und Praxis.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FÄCHER
+    ====================================================== -->
+
+    <section id="faecher">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            01 — Fächer
+          </div>
+
+          <h2>
+            Die angebotenen Fächer
+          </h2>
+
+          <p>
+            Professionelle Nachhilfe für wichtige
+            MINT-Fächer und Rechnungswesen.
+          </p>
+
+        </div>
+
+
+        <div class="subjects">
+
+
+          <article class="subject">
+
+            <span class="subject-number">
+              01
+            </span>
+
+            <h3>
+              Mathematik
+            </h3>
+
+            <p>
+              Komplexe mathematische Konzepte durch
+              Erklärung, Übung und Anwendung verstehen.
+            </p>
+
+          </article>
+
+
+          <article class="subject">
+
+            <span class="subject-number">
+              02
+            </span>
+
+            <h3>
+              Rechnungswesen
+            </h3>
+
+            <p>
+              Buchhaltung, Kontenplan, doppelte
+              Buchhaltung und Kostenrechnung
+              verständlich lernen.
+            </p>
+
+          </article>
+
+
+          <article class="subject">
+
+            <span class="subject-number">
+              03
+            </span>
+
+            <h3>
+              Physik
+            </h3>
+
+            <p>
+              Naturgesetze, Optik, Elektrizität sowie
+              theoretische und praktische Aufgaben
+              strukturiert bearbeiten.
+            </p>
+
+          </article>
+
+
+          <article class="subject">
+
+            <span class="subject-number">
+              04
+            </span>
+
+            <h3>
+              Mechanik
+            </h3>
+
+            <p>
+              Kräfte, Bewegungen, Statik und Dynamik
+              Schritt für Schritt verstehen.
+            </p>
+
+          </article>
+
+
+          <article class="subject">
+
+            <span class="subject-number">
+              05
+            </span>
+
+            <h3>
+              Chemie
+            </h3>
+
+            <p>
+              Chemische Reaktionen verstehen und
+              Wissen für Prüfungen strukturiert aufbauen.
+            </p>
+
+          </article>
+
+
+          <article class="subject">
+
+            <span class="subject-number">
+              06
+            </span>
+
+            <h3>
+              Individuell
+            </h3>
+
+            <p>
+              Die Inhalte werden an deinen Lernstand,
+              deine Unterlagen und deine persönlichen
+              Ziele angepasst.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ÜBER MICH
+    ====================================================== -->
+
+    <section
+      class="about"
+      id="ueber-mich"
+    >
+
+      <div class="container">
+
+        <div class="about-grid">
+
+
+          <div class="portrait">
+
+            <!--
+              HIER KANNST DU SPÄTER EIN FOTO EINSETZEN.
+
+              Beispiel:
+
+              <img
+                src="bilder/thomas.jpg"
+                alt="Thomas Petz"
+              >
+            -->
+
+            <div class="portrait-person"></div>
+
+          </div>
+
+
+          <div class="about-content">
+
+            <div class="eyebrow">
+              02 — Zu mir
+            </div>
+
+            <h2>
+              Verständlich.<br>
+              Methodisch.<br>
+              Persönlich.
+            </h2>
+
+            <p>
+              Als Physikstudent habe ich Einblicke
+              in grundlegende Naturgesetze und komplexe
+              Konzepte der Mathematik erhalten.
+              Dadurch weiß ich, wie man schwierige
+              Inhalte verständlich macht.
+            </p>
+
+            <p>
+              Durch meine Matura in Wirtschaft und
+              Rechnungswesen kann ich auch bei der
+              Anwendung des Kontenplans und bei
+              Kostenrechnung weiterhelfen.
+            </p>
+
+            <p>
+              Mein pädagogischer Ansatz verbindet
+              methodisches und analytisches Denken
+              mit persönlicher Betreuung.
+            </p>
+
+            <p>
+              Ziel ist nicht nur, Lösungen zu zeigen,
+              sondern die Fähigkeit zu vermitteln,
+              sie selbst zu finden.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NACHHILFE / ABLAUF
+    ====================================================== -->
+
+    <section id="nachhilfe">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            03 — Die Nachhilfe
+          </div>
+
+          <h2>
+            Verständnis schaffen statt
+            nur Wissen vermitteln.
+          </h2>
+
+          <p>
+            So läuft die Zusammenarbeit ab.
+          </p>
+
+        </div>
+
+
+        <div class="steps">
+
+
+          <article class="step">
+
+            <div class="step-number">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Erstgespräch
+              </h3>
+
+              <div class="step-label">
+                Diagnose & Analyse
+              </div>
+
+              <p>
+                Nach einem ausführlichen Gespräch
+                ergibt sich ein individueller Lernplan.
+                Gemeinsam suchen wir nach Defiziten
+                und Stärken, um die bestmöglichen
+                Voraussetzungen für gute Leistungen
+                zu schaffen.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Nachhilfe
+              </h3>
+
+              <div class="step-label">
+                Individuelle Lernphasen
+              </div>
+
+              <p>
+                Wir arbeiten Schritt für Schritt
+                an Schwierigkeiten und zerlegen
+                komplexe Konzepte in verständliche
+                Abschnitte.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Erfolg
+              </h3>
+
+              <div class="step-label">
+                Praxis & Anwendung
+              </div>
+
+              <p>
+                Theorie wird durch Übungen und
+                praktische Anwendungen gefestigt.
+                So entsteht die Verbindung zwischen
+                Wissen und Praxis.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <!-- ONLINE / PRÄSENZ -->
+
+        <div class="learning-modes">
+
+
+          <article class="mode">
+
+            <div class="mode-number">
+              03-A — PRÄSENZ
+            </div>
+
+            <h3>
+              Hausbesuch
+            </h3>
+
+            <p>
+              Die klassische Nachhilfe findet direkt
+              bei dir daheim statt. Unterlagen,
+              Technik und Materialien können
+              mitgebracht werden.
+            </p>
+
+          </article>
+
+
+          <article class="mode">
+
+            <div class="mode-number">
+              03-B — ONLINE
+            </div>
+
+            <h3>
+              Jederzeit und überall
+            </h3>
+
+            <p>
+              Über einen Link kommunizieren wir
+              digital. Mit einem digitalen Whiteboard
+              können Inhalte auch online gemeinsam
+              erarbeitet werden.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section
+      class="faq"
+      id="faq"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            04 — FAQ
+          </div>
+
+          <h2>
+            Häufige Fragen
+          </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+
+          <details>
+
+            <summary>
+              Wie oft findet die Nachhilfe statt?
+            </summary>
+
+            <p>
+              Die Häufigkeit hängt vom individuellen
+              Bedarf ab. In der Regel sind ein bis zwei
+              Einheiten pro Woche sinnvoll. Für Prüfungen
+              kann auch ein intensiverer Lernplan
+              vereinbart werden.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Was ist der Unterschied zu regulären Kursen?
+            </summary>
+
+            <p>
+              Die Nachhilfe findet auf individueller
+              Ebene statt. Der Ansatz kann dadurch
+              direkt an Lernstil, Lernstand und
+              konkreten Lernstoff angepasst werden.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Wie viel kostet die Nachhilfe?
+            </summary>
+
+            <p>
+              Die Kosten können abhängig vom
+              Bildungsniveau, der Anreisedistanz und
+              der Anzahl der gebuchten Stunden
+              unterschiedlich ausfallen.
+            </p>
+
+          </details>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         KONTAKT
+    ====================================================== -->
+
+    <section id="kontakt">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+
+          <div>
+
+            <div class="eyebrow">
+              05 — Kontakt
+            </div>
+
+            <h2>
+              Bereit<br>
+              loszulegen?
+            </h2>
+
+            <p>
+              Ob Mathematik, Naturwissenschaften,
+              MINT oder Rechnungswesen – melde dich
+              für ein persönliches Erstgespräch.
+            </p>
+
+          </div>
+
+
+          <div class="contact-details">
+
+            <a
+              class="contact-link"
+              href="mailto:petzthomas4@gmail.com"
+            >
+              petzthomas4@gmail.com
+            </a>
+
+            <a
+              class="contact-link"
+              href="tel:+436609272902"
+            >
+              +43 660 9272902
+            </a>
+
+            <a
+              class="button contact-button"
+              href="mailto:petzthomas4@gmail.com?subject=Anfrage%20Nachhilfe"
+            >
+              E-Mail schreiben →
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <span>
+        PETZ NACHHILFE
+        • MATHEMATIK
+        • PHYSIK
+        • CHEMIE
+        • MECHANIK
+        • RECHNUNGSWESEN
+      </span>
+
+      <span>
+        © 2026 Petz Nachhilfe
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    mobileMenu.addEventListener(
+      "click",
+      function () {
+
+        navLinks.classList.toggle("active");
+
+      }
+    );
+
+
+    /*
+      Mobile Menü nach Klick auf einen Link schließen
+    */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove("active");
+
+          }
+        );
+
+      });
+
+
+    /*
+      FAQ:
+      Beim Öffnen eines Elements werden die anderen
+      automatisch geschlossen.
+    */
+
+    const faqItems =
+      document.querySelectorAll("details");
+
+    faqItems.forEach(function (item) {
+
+      item.addEventListener(
+        "toggle",
+        function () {
+
+          if (!item.open) {
+            return;
+          }
+
+          faqItems.forEach(function (other) {
+
+            if (
+              other !== item &&
+              other.open
+            ) {
+              other.open = false;
+            }
+
+          });
+
+        }
+      );
+
+    });
+
+
+    /*
+      Header beim Scrollen leicht abdunkeln
+    */
+
+    window.addEventListener(
+      "scroll",
+      function () {
+
+        const header =
+          document.querySelector("header");
+
+        if (window.scrollY > 30) {
+
+          header.style.boxShadow =
+            "0 5px 25px rgba(0,0,0,.06)";
+
+        } else {
+
+          header.style.boxShadow =
+            "none";
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
