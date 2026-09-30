@@ -808,28 +808,62 @@ footer .container {
 }
 
 /* =========================================================
-   PREISSEITE
+   PREISSEITE 
    ========================================================= */
-
-.prices-site header {
-    position: static;
-}
-
-/* Allgemeines Section-Padding der Hauptseite auf der Preisseite ausschalten */
-.prices-site section {
-    padding: 0;
-}
 
 .prices-site .prices-page {
     padding-top: 25px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .prices-site .prices-intro {
-    padding: 20px 0 25px;
-    margin-bottom: 0;
+    margin-bottom: 25px;
 }
 
-.prices-site .prices {
-    padding: 0;
+/* Intensivkurs */
+.prices-site .intensive {
+    margin-top: 18px;
+    min-height: 0;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: end;
+}
+
+/* Preis beim Intensivkurs */
+.prices-site .intensive .price {
+    margin: 0;
+    white-space: nowrap;
+    align-self: end;
+}
+
+/* Hinweisbox */
+.prices-site .note {
+    margin-top: 18px;
+    padding: 22px 30px;
+    border-radius: 25px;
+}
+
+/* Überschrift der Hinweisbox */
+.prices-site .note strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Footer etwas näher an den Inhalt */
+.prices-site footer {
+    margin-top: 5px;
+}
+
+/* Auf kleinen Bildschirmen */
+@media (max-width: 700px) {
+    .prices-site .intensive {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .prices-site .intensive .price {
+        justify-self: start;
+    }
 }
