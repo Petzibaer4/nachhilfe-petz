@@ -867,3 +867,135 @@ footer .container {
         justify-self: start;
     }
 }
+
+/* =========================================================
+   MODERNES MENÜBAND
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #d9e0e8;
+
+    box-shadow: 0 4px 18px rgba(23, 34, 49, 0.06);
+}
+
+.site-header .nav {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+/* Logo */
+
+.site-header .logo {
+    color: #172231;
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    white-space: nowrap;
+}
+
+.site-header .logo span {
+    color: #2563a6;
+}
+
+/* Menü */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-nav a {
+    position: relative;
+
+    color: #526174;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 11px 15px;
+    border-radius: 10px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #174a7a;
+    background: #e8f1fa;
+    transform: translateY(-1px);
+}
+
+/* Aktive Seite */
+
+.main-nav a.active {
+    color: #ffffff;
+    background: #2563a6;
+    box-shadow: 0 4px 10px rgba(37, 99, 166, 0.20);
+}
+
+/* Kontakt hervorheben */
+
+.main-nav .nav-contact {
+    color: #ffffff;
+    background: #174a7a;
+
+    margin-left: 8px;
+    padding-left: 19px;
+    padding-right: 19px;
+}
+
+.main-nav .nav-contact:hover {
+    color: #ffffff;
+    background: #2563a6;
+}
+
+
+/* =========================================================
+   MENÜ – HANDY
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .site-header .nav {
+        min-height: auto;
+        padding-top: 14px;
+        padding-bottom: 14px;
+
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .main-nav a {
+        padding: 8px 11px;
+        font-size: 14px;
+    }
+
+    .main-nav .nav-contact {
+        margin-left: 0;
+    }
+}
