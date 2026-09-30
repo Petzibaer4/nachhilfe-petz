@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Preise | Petz Nachhilfe</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f7f8fa;
+        color: #222;
+        line-height: 1.6;
+    }
+
+    header {
+        background: #ffffff;
+        padding: 25px 20px;
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+
+    header p {
+        color: #666;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .intro {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .intro h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .intro p {
+        color: #666;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .prices {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .price-card {
+        background: white;
+        border-radius: 14px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .price-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    .price {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: auto;
+    }
+
+    .intensive {
+        margin-top: 25px;
+    }
+
+    .note {
+        margin-top: 40px;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 25px;
+        color: #666;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .note strong {
+        color: #222;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 50px;
+        background: #ffffff;
+        color: #777;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        .container {
+            margin: 30px auto;
+        }
+
+        .price-card {
+            padding: 25px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Petz Nachhilfe</h1>
+    <p>Professionelle Nachhilfe für MINT-Fächer &amp; Rechnungswesen</p>
+</header>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>Preise</h2>
+        <p>
+            Hier findest du eine Übersicht über die verschiedenen
+            Nachhilfeangebote und die jeweiligen Richtpreise.
+        </p>
+    </section>
+
+    <section class="prices">
+
+        <div class="price-card">
+            <div>
+                <h3>Einzelnachhilfe – 60 Minuten</h3>
+                <p class="description">
+                    Ideal, um konkrete Fragen zu klären, Wissenslücken
+                    zu bearbeiten oder die Nachhilfe zunächst auszuprobieren.
+                </p>
+            </div>
+
+            <div class="price">€ 30,-</div>
+        </div>
+
+
+        <div class="price-card">
+            <div>
+                <h3>Einzelnachhilfe – 90 Minuten</h3>
+                <p class="description">
+                    Besonders geeignet zur Vorbereitung auf Prüfungen.
+                    Mit 90 Minuten bleibt genügend Zeit, um intensiv
+                    zu arbeiten, ohne dabei zu viel auf einmal zu machen.
+                </p>
+            </div>
+
+            <div class="price">€ 40,-</div>
+        </div>
+
+
+        <div class="price-card">
+            <div>
+                <h3>Gruppennachhilfe – 60 Minuten</h3>
+                <p class="description">
+                    Eine gute Möglichkeit für selbstständigere Lernende
+                    oder wenn mehrere Personen gemeinsam lernen möchten.
+                    Dabei können auch Fragen und Themen auftauchen,
+                    an die man vorher vielleicht noch gar nicht gedacht hat.
+                </p>
+            </div>
+
+            <div class="price">€ 25,-</div>
+        </div>
+
+
+        <div class="price-card">
+            <div>
+                <h3>Gruppennachhilfe – 90 Minuten</h3>
+                <p class="description">
+                    Geeignet für gemeinsames und selbstständiges Lernen
+                    in der Gruppe. Die zusätzliche Zeit ermöglicht es,
+                    mehrere Themen ausführlich zu bearbeiten und offene
+                    Fragen zu klären.
+                </p>
+            </div>
+
+            <div class="price">€ 30,-</div>
+        </div>
+
+    </section>
+
+
+    <section class="price-card intensive">
+        <div>
+            <h3>Intensivkurs – 60 Minuten</h3>
+
+            <p class="description">
+                Wenn eine wichtige Prüfung bevorsteht – beispielsweise
+                die Matura oder ein Aufnahmetest – oder größere
+                Wissenslücken aufgearbeitet werden sollen, eignet sich
+                der Intensivkurs besonders gut.
+            </p>
+
+            <p class="description">
+                Über einen Zeitraum von etwa ein bis zwei Wochen wird
+                gezielt an den benötigten Themen gearbeitet. Der
+                Intensivkurs umfasst mindestens 10 Stunden, die
+                individuell auf diesen Zeitraum verteilt werden.
+            </p>
+
+            <p class="description">
+                Für Intensivkurse wird um eine frühzeitige Anmeldung
+                gebeten, damit die Termine entsprechend geplant werden können.
+            </p>
+        </div>
+
+        <div class="price">€ 20,-</div>
+    </section>
+
+
+    <section class="note">
+        <strong>Hinweis zu den Preisen</strong>
+
+        <p>
+            Bei den angegebenen Beträgen handelt es sich um Richtwerte.
+            Der genaue Preis wird nach einer persönlichen Anfrage per
+            Telefon oder E-Mail vereinbart. Eventuelle Anfahrtskosten
+            können zusätzlich anfallen.
+        </p>
+    </section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 Petz Nachhilfe. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body> </html>
