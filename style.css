@@ -817,7 +817,7 @@ footer .container {
 }
 
 .prices-site .prices-intro {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 /* Intensivkurs */
@@ -827,7 +827,7 @@ footer .container {
     padding: 30px;
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 40px;
+    gap: 20px;
     align-items: end;
 }
 
