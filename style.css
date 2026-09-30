@@ -806,3 +806,20 @@ footer .container {
 .contact-link:hover {
   color: var(--blue);
 }
+
+/* =========================================================
+   PREISSEITE
+   ========================================================= */
+
+.prices-site header {
+    position: static;
+}
+
+.prices-site .prices-page {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.prices-site .prices-intro {
+  margin-bottom: 30px;
+}
