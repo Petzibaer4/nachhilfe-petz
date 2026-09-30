@@ -815,11 +815,21 @@ footer .container {
     position: static;
 }
 
+/* Allgemeines Section-Padding der Hauptseite auf der Preisseite ausschalten */
+.prices-site section {
+    padding: 0;
+}
+
 .prices-site .prices-page {
-  padding-top: 25px;
-  padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 20px;
 }
 
 .prices-site .prices-intro {
-  margin-bottom: 30px;
+    padding: 20px 0 25px;
+    margin-bottom: 0;
+}
+
+.prices-site .prices {
+    padding: 0;
 }
