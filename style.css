@@ -1017,3 +1017,22 @@ footer .container {
     display: block;
     object-fit: contain;
 }
+
+/* =========================================================
+   PREISSEITE - ABSTÄNDE
+   ========================================================= */
+
+.prices-site .prices-page {
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.prices-site .prices-intro {
+    padding: 0;
+    margin: 0 auto 10px;
+}
+
+.prices-site .prices {
+    padding: 0;
+    margin: 0;
+}
